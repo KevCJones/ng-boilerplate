@@ -5,7 +5,11 @@
   "projects": {
     "test1": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@ngneat/spectator:spectator-component": {
+          "styleext": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -120,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "test1"
+    }
+  },
+  "defaultProject": "test1",
+  "cli": {
+    "defaultCollection": "@ngneat/spectator"
+  }
 }

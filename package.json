@@ -8,7 +8,6 @@
     "test": "ng test",
     "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "format:fix": "pretty-quick --staged",
-    "precommit": "run-s format:fix lint",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -52,5 +51,10 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s format:fix lint"
+    }
   }
 }

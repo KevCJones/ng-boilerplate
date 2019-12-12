@@ -1,29 +1,24 @@
-import { TestBed, async } from '@angular/core/testing';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
+import { MockComponents } from 'ng-mocks';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppComponent]
-    }).compileComponents();
-  }));
+  let spec: Spectator<AppComponent>;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  const createComponent = createComponentFactory({
+    component: AppComponent,
+    mocks: [],
+    declarations: [MockComponents()]
   });
 
-  it(`should have as title 'test1'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('test1');
+  beforeEach(() => {
+    spec = createComponent({
+      detectChanges: false
+    });
+    spec.detectChanges();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('test1 app is running!');
+  it('should create', () => {
+    expect(spec.component).toBeTruthy();
   });
 });

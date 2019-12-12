@@ -3,14 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "precommit": "run-s format:fix lint",
     "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "format:fix": "pretty-quick --staged",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "husky.hooks": {
+    "precommit": "run-s format:fix lint"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "moment": "^2.24.0",
     "ng-mocks": "^8.1.0",
     "prettier": "^1.19.1",
     "rxjs": "~6.4.0",

@@ -1,3 +1,3 @@
-# New project
+# Boilerplate
 
-Add `"precommit": "run-s format:fix lint"` to package.json but then run `./node_modules/.bin/husky-upgrade` for prettier setup completion
+A prep piece to make interview questions easy to scaffold with my favourite weapons pre-installed

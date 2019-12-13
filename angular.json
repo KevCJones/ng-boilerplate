@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test1": {
+    "seed": {
       "projectType": "application",
       "schematics": {
         "@ngneat/spectator:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test1",
+            "outputPath": "dist/seed",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test1:build"
+            "browserTarget": "seed:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test1:build:production"
+              "browserTarget": "seed:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test1:build"
+            "browserTarget": "seed:build"
           }
         },
         "test": {
@@ -99,18 +99,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test1:serve"
+            "devServerTarget": "seed:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test1:serve:production"
+              "devServerTarget": "seed:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "test1",
+  "defaultProject": "seed",
   "cli": {
     "defaultCollection": "@ngneat/spectator"
   }
